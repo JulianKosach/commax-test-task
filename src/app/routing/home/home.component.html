@@ -1,3 +1,18 @@
-<p>
-  Home
+<mat-list role="list" class="companies-list">
+  <mat-list-item *ngFor="let company of companies" class="company">
+    <button mat-button [routerLink]="'/company/'+company.id" class="f1 company-button">
+      <div class="f-r ai-c">
+        <div class="company-img-wrap ai-c jc-c">
+          <img src="{{company.picture}}" class="company-img" />
+        </div>
+        <div class="company-info-col f1 f-c">
+          <p class="f1">{{company.name}}</p>
+          <p class="f1">{{company.city}}</p>
+        </div>
+      </div>
+    </button>
+  </mat-list-item>
+</mat-list>
+<p *ngIf="companies.length === 0">
+  There are nothing to show.
 </p>

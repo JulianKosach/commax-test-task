@@ -5,6 +5,18 @@
     display: flex;
     flex: 1;
 }
+.f-r {
+    display: flex;
+    flex-direction: row;
+}
+.f-c {
+    display: flex;
+    flex-direction: column;
+}
+.ai-c {
+    display: flex;
+    align-items: center;
+}
 .jc-c {
     display: flex;
     justify-content: center;

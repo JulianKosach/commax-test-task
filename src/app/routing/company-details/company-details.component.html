@@ -1,3 +1,17 @@
-<p>
-  {{isNew ? 'Add' : 'Details'}}
-</p>
+<div>
+  <div class="company-img-wrap ai-c jc-c">
+    <img src="{{isNew ? null : company.picture}}" class="company-img" />
+  </div>
+  <div class="field-row">
+    <p>Name:</p>
+    <p *ngIf="!isNew">{{company.name}}</p>
+  </div>
+  <div class="field-row">
+    <p>City:</p>
+    <p *ngIf="!isNew">{{company.city}}</p>
+  </div>
+  <div *ngIf="isNew">
+    <button mat-button>Add Company</button>
+  </div>
+  
+</div>

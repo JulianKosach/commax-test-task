@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatListModule, MatButtonModule, MatCardModule } from '@angular/material';
+import { MatListModule, MatButtonModule, MatCardModule, MatIconModule } from '@angular/material';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -23,6 +23,7 @@ import { CompanyDetailsComponent } from './routing/company-details/company-detai
     MatListModule,
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

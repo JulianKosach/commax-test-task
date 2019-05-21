@@ -1,18 +1,34 @@
-<mat-list role="list" class="companies-list">
-  <mat-list-item *ngFor="let company of companies" class="company">
-    <button mat-button [routerLink]="'/company/'+company.id" class="f1 company-button">
-      <div class="f-r ai-c">
-        <div class="company-img-wrap ai-c jc-c">
-          <img src="{{company.picture}}" class="company-img" />
+<div class="companies-list">
+  <mat-list *ngIf="(companies && companies.length !== 0)" role="list">
+    <mat-list-item *ngFor="let company of companies" class="company">
+      <button mat-button [routerLink]="'/company/'+company.id" class="f1 company-button">
+        <div class="f-r ai-c">
+          <div class="company-img-wrap ai-c jc-c">
+            <img src="{{company.picture}}" class="company-img" />
+          </div>
+          <div class="company-info-col f1 f-c">
+            <p class="f1">{{company.name}}</p>
+            <p class="f1">{{company.city}}</p>
+          </div>
+          <button mat-icon-button (click)="deleteCompany(company.id)" class="FAB-button">
+            <mat-icon>delete</mat-icon>
+          </button>
         </div>
-        <div class="company-info-col f1 f-c">
-          <p class="f1">{{company.name}}</p>
-          <p class="f1">{{company.city}}</p>
-        </div>
-      </div>
-    </button>
-  </mat-list-item>
-</mat-list>
-<p *ngIf="companies.length === 0">
-  There are nothing to show.
-</p>
+      </button>
+    </mat-list-item>
+  </mat-list>
+  <p *ngIf="!(companies && companies.length !== 0)" class="empty-text">
+    There are nothing to show.
+  </p>
+</div>
+<div class="FAB ai-c">
+  <button mat-icon-button color="primary" [routerLink]="'/company/add'" class="FAB-button">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-icon-button color="primary" (click)="deleteAll()" class="FAB-button">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button mat-icon-button color="primary" class="FAB-button">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</div>

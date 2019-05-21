@@ -1,11 +1,13 @@
 <mat-toolbar color="primary" class="jc-c" >
-  <div class="f1 jc-c">
-
+  <div class="f1 jc-s">
+    <button mat-button *ngIf="routeUrl !== '/home'" (click)="goBack()">
+      {{'< Back'}}
+    </button>
   </div>
   <div class="f1 jc-c">
     <span>COMMAX</span>
   </div>
-  <div class="f1 jc-c">
+  <div class="f1 jc-e">
 
   </div>
 </mat-toolbar>

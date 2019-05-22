@@ -3,7 +3,7 @@ import { Company } from './company';
 
 
 const companies: Company[] = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 100; i++) {
   companies.push({
     id: i + '',
     name: 'Company ' + i,

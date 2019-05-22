@@ -23,8 +23,8 @@ export class CompaniesService {
     return this.onChange;
   }
 
-  getCompanies(): Observable<Company[]> {
-    return of( this.companies );
+  getCompanies(offset = 0, count = 10): Observable<Company[]> {
+    return of( this.companies.slice(offset, offset + count));
   }
 
   getCompany(id): Observable<Company> {

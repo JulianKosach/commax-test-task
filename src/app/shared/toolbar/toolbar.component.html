@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="jc-c" >
+<mat-toolbar color="primary" class="toolbar jc-c" [ngStyle]="{'top': (showToolbar ? '0px' : '-80px')}" >
   <div class="f1 jc-s">
     <button mat-button *ngIf="routeUrl && routeUrl.indexOf('company') !== -1" (click)="goBack()">
       {{'< Back'}}

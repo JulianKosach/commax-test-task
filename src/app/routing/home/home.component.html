@@ -4,7 +4,7 @@
       <button mat-button [routerLink]="'/company/'+company.id" class="f1 company-button">
         <div class="f-r ai-c">
           <div class="company-img-wrap ai-c jc-c">
-            <img src="{{company.picture}}" class="company-img" />
+            <img [src]="company.picture | safeUrl" class="company-img" />
           </div>
           <div class="company-info-col f1 f-c">
             <p class="f1 company-name">{{company.name}}</p>

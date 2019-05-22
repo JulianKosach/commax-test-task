@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './routing/home/home.component';
 import { CompanyDetailsComponent } from './routing/company-details/company-details.component';
 import { CompanyAddComponent } from './routing/company-add/company-add.component';
+import { SafeUrl } from './safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CompanyAddComponent } from './routing/company-add/company-add.component
     HomeComponent,
     CompanyDetailsComponent,
     CompanyAddComponent,
+    SafeUrl,
   ],
   imports: [
     BrowserModule,

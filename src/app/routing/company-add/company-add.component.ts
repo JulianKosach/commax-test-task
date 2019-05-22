@@ -17,21 +17,27 @@ export class CompanyAddComponent implements OnInit {
       Validators.required,
       Validators.minLength(2),
     ]),
+    searchControl: new FormControl(''),
     city: new FormControl('', [
       Validators.required,
       Validators.minLength(2),
     ]),
-    searchControl: new FormControl(''),
     latitude: new FormControl(51.507222, [
       Validators.required,
     ]),
     longitude: new FormControl(-0.1275, [
       Validators.required,
     ]),
+    pictureUrl: new FormControl(null, [
+      Validators.required,
+    ]),
   });
 
   @ViewChild('search')
   public searchElementRef: ElementRef;
+
+  @ViewChild('picturePicker')
+  public picturePickerElementRef: ElementRef;
 
   constructor(
     private companiesService: CompaniesService,
@@ -80,10 +86,23 @@ export class CompanyAddComponent implements OnInit {
     }
   }
 
+  onPictureSelected(event) {
+    const file: File = event.target.files[0];
+    const reader: FileReader = new FileReader();
+    reader.onloadend = (e) => {
+      console.log(file);
+      this.companyForm.controls.pictureUrl.setValue( reader.result );
+   };
+    reader.readAsDataURL(file);
+  }
+
   addCompany(): void {
     this.companiesService.addCompany({
       name: this.companyForm.controls.name.value,
       city: this.companyForm.controls.city.value,
+      lat: this.companyForm.controls.latitude.value,
+      lng: this.companyForm.controls.longitude.value,
+      picture: this.companyForm.controls.pictureUrl.value,
     });
     this.location.back();
   }

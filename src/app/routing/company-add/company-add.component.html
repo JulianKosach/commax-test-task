@@ -1,4 +1,10 @@
 <form [formGroup]="companyForm" class="form f-c" (ngSubmit)="addCompany()">
+  <div *ngIf="companyForm.controls.pictureUrl.value" class="company-img-wrap f1 ai-c jc-c">
+    <img [src]="companyForm.controls.pictureUrl.value | safeUrl" class="company-img" />
+  </div>
+  <div class="picture-picker">
+    <input #picturePicker type="file" capture="camera" accept="image/*" id="cameraInput" (change)="onPictureSelected($event)">
+  </div>
   <mat-form-field class="f1">
     <input matInput placeholder="Name" formControlName="name">
   </mat-form-field>

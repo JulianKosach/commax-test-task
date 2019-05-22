@@ -37,10 +37,11 @@ export class CompaniesService {
       name: company.name,
       city: company.city,
       address: {
-        lat: 51.507222,
-        lng: -0.1275,
+        lat: company.lat || 51.507222,
+        lng: company.lng || -0.1275,
       },
-      picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSorKgYDVP965AfsKx99CshH8CQ3VzkxQ5UbHtSsLW_zbIfz6kD',
+      picture: company.picture ||
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSorKgYDVP965AfsKx99CshH8CQ3VzkxQ5UbHtSsLW_zbIfz6kD',
     });
   }
 

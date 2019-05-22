@@ -1,6 +1,6 @@
 <div class="company-form">
   <div class="company-img-wrap f1 ai-c jc-c">
-    <img src="{{company.picture}}" class="company-img" />
+    <img [src]="company.picture | safeUrl" class="company-img" />
   </div>
   <div class="field-row f-r ai-c">
     <p class="field-label f1">Name:</p>
@@ -10,7 +10,7 @@
     <p class="field-label f1">City:</p>
     <p class="field-value f1">{{company.city}}</p>
   </div>
-  <agm-map [latitude]="company.address.lat" [longitude]="company.address.lng" [scrollwheel]="false" [zoom]="16" class="map-block">
-    <agm-marker [latitude]="company.address.lat" [longitude]="company.address.lng"></agm-marker>
+  <agm-map [latitude]="company && company.address.lat" [longitude]="company && company.address.lng" [scrollwheel]="false" [zoom]="16" class="map-block">
+    <agm-marker [latitude]="company && company.address.lat" [longitude]="company && company.address.lng"></agm-marker>
   </agm-map>
 </div>

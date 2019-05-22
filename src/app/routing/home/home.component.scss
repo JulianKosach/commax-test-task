@@ -17,12 +17,21 @@
 .company-img-wrap {
     flex: 0;
     width: 100px;
-    height: 100px;
-    margin-right: 20px;
+    height: 120px;
+    margin-right: 30px;
 }
 .company-img {
     max-width: 100px;
     max-height: 100px;
+}
+.company-name {
+    font-size: 20px;
+    margin: 0;
+}
+.company-city {
+    font-size: 18px;
+    opacity: 0.7;
+    margin: 0;
 }
 .FAB {
     position: fixed;
@@ -31,4 +40,5 @@
     padding: 10px;
     background: #fff;
     border-radius: 60px;
+    border: 1px solid #eee;
 }

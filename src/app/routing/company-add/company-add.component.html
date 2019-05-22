@@ -1,0 +1,9 @@
+<form [formGroup]="companyForm" class="form f-c" (ngSubmit)="addCompany()">
+  <mat-form-field class="f1">
+    <input matInput placeholder="Name" formControlName="name">
+  </mat-form-field>
+  <mat-form-field class="f1">
+    <input matInput placeholder="City" formControlName="city">
+  </mat-form-field>
+  <button mat-button type="submit" [disabled]="!companyForm.valid">Add Company</button>
+</form>

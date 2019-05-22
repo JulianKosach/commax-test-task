@@ -1,17 +1,13 @@
-<div>
-  <div class="company-img-wrap ai-c jc-c">
-    <img src="{{isNew ? null : company.picture}}" class="company-img" />
+<div class="company-form">
+  <div class="company-img-wrap f1 ai-c jc-c">
+    <img src="{{company.picture}}" class="company-img" />
   </div>
-  <div class="field-row">
-    <p>Name:</p>
-    <p *ngIf="!isNew">{{company.name}}</p>
+  <div class="field-row f-r ai-c">
+    <p class="field-label f1">Name:</p>
+    <p class="field-value f1">{{company.name}}</p>
   </div>
-  <div class="field-row">
-    <p>City:</p>
-    <p *ngIf="!isNew">{{company.city}}</p>
+  <div class="field-row f-r ai-c">
+    <p class="field-label f1">City:</p>
+    <p class="field-value f1">{{company.city}}</p>
   </div>
-  <div *ngIf="isNew">
-    <button mat-button>Add Company</button>
-  </div>
-  
 </div>

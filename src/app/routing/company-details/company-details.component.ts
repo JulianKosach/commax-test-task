@@ -10,7 +10,6 @@ import { CompaniesService } from '../../services/companies.service';
   styleUrls: ['./company-details.component.scss']
 })
 export class CompanyDetailsComponent implements OnInit {
-  isNew: boolean;
   company: Company;
 
   constructor(
@@ -22,10 +21,7 @@ export class CompanyDetailsComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.isNew = false;
       this.getCompany(id);
-    } else {
-      this.isNew = true;
     }
   }
 

@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="jc-c" >
   <div class="f1 jc-s">
-    <button mat-button *ngIf="routeUrl !== '/home'" (click)="goBack()">
+    <button mat-button *ngIf="routeUrl && routeUrl.indexOf('company') !== -1" (click)="goBack()">
       {{'< Back'}}
     </button>
   </div>

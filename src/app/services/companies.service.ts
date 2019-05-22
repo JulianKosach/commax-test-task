@@ -31,6 +31,19 @@ export class CompaniesService {
     return of( this.companies.find(company => company.id === id) );
   }
 
+  addCompany(company): void {
+    this.companies.push({
+      id: Math.random().toString(36).substr(2, 9),
+      name: company.name,
+      city: company.city,
+      address: {
+        lat: 51.507222,
+        lng: -0.1275,
+      },
+      picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSorKgYDVP965AfsKx99CshH8CQ3VzkxQ5UbHtSsLW_zbIfz6kD',
+    });
+  }
+
   deleteCompany(id): void {
     this.companies = this.companies.filter(company => company.id !== id);
     this.emitChangeEvent();

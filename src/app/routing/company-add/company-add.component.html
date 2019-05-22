@@ -12,7 +12,7 @@
     <!-- <input matInput placeholder="City" formControlName="city"> -->
     <input matInput placeholder="Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search formControlName="searchControl">
   </mat-form-field>
-  <button mat-button type="submit" [disabled]="!companyForm.valid">Add Company</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!companyForm.valid">Add Company</button>
 </form>
 <agm-map [latitude]="companyForm.controls.latitude.value" [longitude]="companyForm.controls.longitude.value" [scrollwheel]="false" [zoom]="16" class="map-block">
   <agm-marker [latitude]="companyForm.controls.latitude.value" [longitude]="companyForm.controls.longitude.value"></agm-marker>

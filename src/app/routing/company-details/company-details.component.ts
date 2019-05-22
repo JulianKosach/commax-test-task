@@ -22,12 +22,18 @@ export class CompanyDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.getCompany(id);
+    } else {
+      this.location.back();
     }
   }
 
   getCompany(id): void {
     this.companiesService.getCompany(id)
-      .subscribe(company => this.company = company);
+      .subscribe(company => { if (company) {
+        this.company = company;
+      } else {
+        this.location.back();
+      }});
   }
 
 }

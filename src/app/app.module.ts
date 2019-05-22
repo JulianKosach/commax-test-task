@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatListModule, MatButtonModule, MatCardModule, MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -20,6 +21,10 @@ import { CompanyAddComponent } from './routing/company-add/company-add.component
   ],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCQVDahLNE7np4tJj1d4Qku2XZhOzAVpnA',
+      libraries: ['places']
+    }),
     AppRoutingModule,
     ReactiveFormsModule,
     SharedModule,

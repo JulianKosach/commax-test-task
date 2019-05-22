@@ -40,8 +40,7 @@ export class ToolbarComponent implements OnInit {
     this.lastScrolled = scrollTop;
   }
 
-  goBack(): void {
+  goBack() {
     this.location.back();
   }
-
 }
